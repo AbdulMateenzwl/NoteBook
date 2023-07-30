@@ -1,12 +1,27 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 // import './App.css'
+import NavBar from './componants/NavBar'
+import Home from './componants/Home'
+import About from './componants/About'
 
-function App() {
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
+
+
+export default function App() {
   return (
-    <>
-    <h1>This is NoteBook App</h1>
-    </>
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 
-export default App
+
+
