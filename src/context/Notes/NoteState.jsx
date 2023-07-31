@@ -30,6 +30,78 @@ const NoteState = (props) => {
             "tag": "personal",
             "date": "2023-07-31T09:32:39.175Z",
             "__v": 0
+        },
+        {
+            "_id": "64c77dfaaaedfa6e6be9d11c",
+            "user": "64c1061384e44fcbedb38e07",
+            "title": "my title",
+            "description": "please do something",
+            "tag": "personal",
+            "date": "2023-07-31T09:25:14.899Z",
+            "__v": 0
+        },
+        {
+            "_id": "64c77fb7aaedfa6e6be9d11f",
+            "user": "64c1061384e44fcbedb38e07",
+            "title": "note 1",
+            "description": "note 1 is about testing",
+            "tag": "personal",
+            "date": "2023-07-31T09:32:39.175Z",
+            "__v": 0
+        },
+        {
+            "_id": "64c77dfaaaedfa6e6be9d11c",
+            "user": "64c1061384e44fcbedb38e07",
+            "title": "my title",
+            "description": "please do something",
+            "tag": "personal",
+            "date": "2023-07-31T09:25:14.899Z",
+            "__v": 0
+        },
+        {
+            "_id": "64c77fb7aaedfa6e6be9d11f",
+            "user": "64c1061384e44fcbedb38e07",
+            "title": "note 1",
+            "description": "note 1 is about testing",
+            "tag": "personal",
+            "date": "2023-07-31T09:32:39.175Z",
+            "__v": 0
+        },
+        {
+            "_id": "64c77dfaaaedfa6e6be9d11c",
+            "user": "64c1061384e44fcbedb38e07",
+            "title": "my title",
+            "description": "please do something",
+            "tag": "personal",
+            "date": "2023-07-31T09:25:14.899Z",
+            "__v": 0
+        },
+        {
+            "_id": "64c77fb7aaedfa6e6be9d11f",
+            "user": "64c1061384e44fcbedb38e07",
+            "title": "note 1",
+            "description": "note 1 is about testing",
+            "tag": "personal",
+            "date": "2023-07-31T09:32:39.175Z",
+            "__v": 0
+        },
+        {
+            "_id": "64c77dfaaaedfa6e6be9d11c",
+            "user": "64c1061384e44fcbedb38e07",
+            "title": "my title",
+            "description": "please do something",
+            "tag": "personal",
+            "date": "2023-07-31T09:25:14.899Z",
+            "__v": 0
+        },
+        {
+            "_id": "64c77fb7aaedfa6e6be9d11f",
+            "user": "64c1061384e44fcbedb38e07",
+            "title": "note 1",
+            "description": "note 1 is about testing",
+            "tag": "personal",
+            "date": "2023-07-31T09:32:39.175Z",
+            "__v": 0
         }
     ];
 
