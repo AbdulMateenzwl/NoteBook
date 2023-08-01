@@ -4,6 +4,7 @@ import Home from './componants/Home'
 import About from './componants/About'
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
 import NoteState from './context/Notes/NoteState'
+import Alert from './componants/Alert'
 
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
     <NoteState>
       <Router>
         <NavBar />
+        <Alert message="This is a Alert!"/>
         <div className="container">
           <Switch>
             <Route exact path="/">
