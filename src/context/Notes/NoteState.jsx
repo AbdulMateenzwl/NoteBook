@@ -109,7 +109,7 @@ const NoteState = (props) => {
 
     // Add a Note
     const addNote = (title, description, tag) => {
-        // TO-DO
+        // TO-DO API
         const note = {
             "_id": "64c2baedde9665ce9cca1e8f288",
             "user": "64c1061384e44fcbedb38e07",
@@ -121,12 +121,15 @@ const NoteState = (props) => {
         };
         setNotes(notes.concat(note));
     }
-    // Delete a Note
-    const deleteNote = () => {
 
+    // Delete a Note
+    const deleteNote = (id) => {
+        // TO-DO API
+        setNotes(notes.filter((note) => { return note._id !== id }));
     }
+
     // Edit a Note
-    const editNote = () => {
+    const editNote = (id,title,description,tag) => {
 
     }
 
