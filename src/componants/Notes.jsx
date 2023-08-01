@@ -5,9 +5,9 @@ import noteContext from '../context/Notes/noteContext';
 
 export default function Notes() {
     const context = useContext(noteContext);
-    const { notes, getNotes } = context;
+    const { notes, getNotes, editNote } = context;
 
-    const [note, setNote] = useState({ etitle: "", edescription: "", etag: "default" })
+    const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "default" })
 
     useEffect(() => {
         getNotes();
@@ -15,14 +15,15 @@ export default function Notes() {
 
     const updateNote = (currentNote) => {
         ref.current.click();
-        setNote({etitle:currentNote.title,edescription:currentNote.description,etag:currentNote.tag})
+        setNote({ id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag })
     }
 
     const ref = useRef(null);
 
     const handleOnClick = (e) => {
         e.preventDefault();
-        
+        editNote(note.id, note.etitle, note.edescription, note.etag);
+        ref.current.click();
     }
 
     const onChange = (e) => {
