@@ -53,6 +53,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-Special thanks to the MERN community and the developers of Express Authenticator for their excellent tools and libraries.
+Special thanks to the MERN community and the developers of Express Authenticator, Bootstrap for their excellent tools and libraries.
 
-Feel free to modify this README file to include more specific details about your project or additional instructions for setting it up. Good luck with your MERN stack Notes Web App!
