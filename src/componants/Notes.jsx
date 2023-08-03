@@ -3,7 +3,7 @@ import NoteItem from './NoteItem';
 import AddNote from './AddNote';
 import noteContext from '../context/Notes/noteContext';
 
-export default function Notes() {
+export default function Notes(props) {
     const context = useContext(noteContext);
     const { notes, getNotes, editNote } = context;
 
@@ -24,6 +24,7 @@ export default function Notes() {
         e.preventDefault();
         editNote(note.id, note.etitle, note.edescription, note.etag);
         ref.current.click();
+        props.showAlert("Updated Successfully", "success")
     }
 
     const onChange = (e) => {
@@ -34,11 +35,10 @@ export default function Notes() {
 
     return (
         <>
-            <AddNote />
+            <AddNote showAlert={props.showAlert} />
             <button ref={ref} type="button" className=" d-none btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
-
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
@@ -64,7 +64,7 @@ export default function Notes() {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button disabled={note.etitle.length < 5 || note.edescription.length < 5 } type="submit" className="btn btn-primary" onClick={handleOnClick}>Update Note</button>
+                            <button disabled={note.etitle.length < 5 || note.edescription.length < 5} type="submit" className="btn btn-primary" onClick={handleOnClick}>Update Note</button>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ export default function Notes() {
                 {
                     notes.map((note) => {
                         return (
-                            <NoteItem note={note} updateNote={updateNote} key={note._id} />
+                            <NoteItem note={note} updateNote={updateNote} showAlert={props.showAlert} key={note._id} />
                         )
                     })
                 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 
-export default function Signup() {
+export default function Signup(props) {
 
   const history = useHistory();
 
@@ -16,16 +16,17 @@ export default function Signup() {
       },
       body: JSON.stringify({ name, email, password })
     })
-    const json = await response.json();
-    console.log(json);
+    const json = await response.json()
+    console.log(json)
 
     if (json.success) {
       // Save the auth token and redirect
       localStorage.setItem('token', json.authToken)
       history.push("/")
+      props.showAlert("Account Created Successfully", "success")
     }
     else {
-      alert("There is a problem while creating you account! Please try again");
+      props.showAlert("There is a problem while creating your account. Please try again", "danger")
     }
   }
 
