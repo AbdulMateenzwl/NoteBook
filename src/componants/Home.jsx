@@ -7,7 +7,6 @@ export default function Home(props) {
 
   return (
     <div className='container'>
-
       <Notes showAlert={showAlert} />
     </div>
   )

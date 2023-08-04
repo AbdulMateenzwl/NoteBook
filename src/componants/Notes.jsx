@@ -2,15 +2,21 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import NoteItem from './NoteItem';
 import AddNote from './AddNote';
 import noteContext from '../context/Notes/noteContext';
+import { useHistory } from 'react-router-dom';
 
 export default function Notes(props) {
     const context = useContext(noteContext);
     const { notes, getNotes, editNote } = context;
-
+    let history = useHistory();
     const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "default" })
 
     useEffect(() => {
-        getNotes();
+        if (localStorage.getItem("token")) {
+            getNotes()
+        } else {
+            props.showAlert("Please Login to access your notes.", "warning")
+            history.push("/login");
+        }
     }, [])
 
     const updateNote = (currentNote) => {
@@ -71,15 +77,13 @@ export default function Notes(props) {
             </div>
             <div className='row my-3'>
                 <h2>Your Notes</h2>
-                <div className="container mx-2">
-                    {notes.length === 0 && 'No Notes to display'}
-                </div>
                 {
-                    notes.map((note) => {
-                        return (
-                            <NoteItem note={note} updateNote={updateNote} showAlert={props.showAlert} key={note._id} />
-                        )
-                    })
+                    (notes.length > 0) ?
+                        notes.map((note) => {
+                            return (
+                                <NoteItem note={note} updateNote={updateNote} showAlert={props.showAlert} key={note._id} />
+                            )
+                        }) : <label > There are no notes to display add some to show them here.</label>
                 }
             </div>
         </>
