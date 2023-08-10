@@ -2,6 +2,8 @@
 
 This is a MERN (MongoDB, Express, React, Node.js) stack web application that allows users to create accounts, log in, save important notes, update them, and delete them as needed.
 
+![text](/public/screenshot.jpg)
+
 ## Features
 
 - **User Authentication**: Users can sign up and log in to access the notes functionality. Express Authenticator is used for user verification.
